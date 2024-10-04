@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+ <title>Guess It</title>
+ </head>
+<body>
+
+<h1>Guess the color Sri Vidya Vilipala</h1>
+
+<form>
+    
+    <label for="mysterycolor">Guess the color</label>
+    <input type="password" id="mysterycolor" value="Red"> <br>
+    <label for="guess">Enter a guess</label>
+    <input type="text" id="guess"> <br>
+    <br>
+    <input type="button" onclick="processColor()" value="Check the color">
+</form>
+
+<p id="result">This text will be replaced with count</p>
+
+<script> 
+    var attempts = 0;
+    var wrong = 0;
+
+    function processColor() {
+        console.log("Getting form values");
+        var mysteryColor = document.getElementById("mysterycolor").value;
+        var guess = document.getElementById("guess").value;
+        out = document.getElementById("result")
+        
+
+        if (mysteryColor.toLowerCase() === guess.toLowerCase()) {
+            attempts++
+            alert("You got it!");
+            out.innerHTML = "Attempt: " + attempts
+        } else {
+            wrong++;
+            alert("That was not it.");
+            out.innerHTML = "Wrong Count: " + wrong
+        }
+         
+    }
+</script>
+
+<div class="container">
+    <img src="Snakeplant.jpg" alt="Blooming Garden" id="imageSrc" style="height: 200px; width: 200;" onclick="nextImage()">
+</div>
+<script>
+    let useImage = 1;
+    function nextImage(){
+        var image = document.getElementById(imagesrc);
+        switch(useImage) {
+            case 1:
+                img.src = "PrayerPalnt.jpg";
+                useImage = 2
+                break;
+            case 2 :
+            img.src = "Blooming Garden.jpg";
+                useImage = 3
+                break;
+            case 2 :
+            img.src = "Snakeplant.jpg";
+                useImage = 1
+                break;
+        }
+    }
+</script>
+</body>
+</html> 
+
+
+
+
+
