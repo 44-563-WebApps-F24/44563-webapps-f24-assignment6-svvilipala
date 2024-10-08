@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Loop Computation</title>
+    </head>
+<body>
+<h1>Figures out by Sri Vidya Vilipala</h1>
+
+    <label for="first">Enter a number</label>
+    <input type="number" id="firstnumber" value="2"><br>
+    <label for="second"> Enter a number</label>
+    <input type="number" id="secondnumber" value="12"><br>
+
+    <button onclick="powerSum()">Compute</button>
+
+
+<p id="result">Sum of first powers with base second is sum</p>
+
+<script> 
+
+function powerSum(){
+    
+    first = parseInt(document.getElementById('firstnumber').value);
+    second = parseInt(document.getElementById('secondnumber').value);
+    out = document.getElementById("result");
+    let sum = 0;
+    
+    for (let i = 0; i < first; i++) {
+        sum += Math.pow(second, i);
+    }
+
+    out.innerHTML = 'Sum of '+first+ ' powers with base '+second+' is '+sum;
+    }
+</script> 
+
+<form id="calcForm">
+    <label>
+    <input type="radio" name="operation" value="max" onClick="processRadio()"> Max </label><br>
+    <label>
+    <input type="radio" name="operation" value="min" onClick="processRadio()"> Min</label><br>
+    <label>
+    <input type="radio" name="operation" value="avg" onClick="processRadio()"> Average</label><br>
+    <label>
+   <input type="radio" name="operation" value="geo" onClick="processRadio()"> Geometric Mean</label><br><br>
+</form>
+
+
+<label for="firstValue">First Number: </label>
+<input type="number" id="firstValue" value="20"><br><br>
+<label for="secondValue">Second Number: </label>
+<input type="number" id="secondValue" value="40"><br><br>
+
+
+<p id="result">Result will be displayed here.</p>
+<button onclick="processRadio()">Calculate</button>
+
+
+<script>
+ 
+    function processRadio() {
+       
+        first = parseFloat(document.getElementById('firstValue').value);
+        second = parseFloat(document.getElementById('secondValue').value);
+        out = document.getElementById('result');
+        resultText = '';
+        result = 0;
+
+        
+        operation = document.querySelector('input[name="operation"]:checked').value;
+
+        
+        switch (operation) {
+            case 'max':
+                result = Math.max(first, second);
+                resultText = "Computed Max with values " + first + " and " + second + " with result " + result;
+
+                break;
+            case 'min':
+                result = Math.min(first, second);
+                resultText = "Computed Min with values " + first + " and " + second + " with result " + result;
+                break;
+            case 'avg':
+                result = (first + second) / 2;
+                resultText = "Computed Average with values " + first +  " and " + second + " with result " + result;
+                break;
+            case 'geo':
+                result = Math.sqrt(first * second);
+                resultText = "Computed Geometric Mean with values " + first + " and " +second+ " with result    " + result;
+                break;
+            default:
+                resultText = 'Invalid selection';
+        }
+
+        out.innerHTML = resultText;
+    }
+</script>
+</body>
+</html> 

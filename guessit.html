@@ -27,8 +27,8 @@
         console.log("Getting form values");
         var mysteryColor = document.getElementById("mysterycolor").value;
         var guess = document.getElementById("guess").value;
+
         out = document.getElementById("result")
-        
 
         if (mysteryColor.toLowerCase() === guess.toLowerCase()) {
             attempts++
@@ -39,32 +39,32 @@
             alert("That was not it.");
             out.innerHTML = "Wrong Count: " + wrong
         }
-         
     }
 </script>
 
 <div class="container">
-    <img src="Snakeplant.jpg" alt="Blooming Garden" id="imageSrc" style="height: 200px; width: 200;" onclick="nextImage()">
+    <img src="Snakeplant.jpg" alt="Blooming Garden" id="imageSrc" onclick="nextImage()">
 </div>
 <script>
-    let useImage = 1;
+    let showing = 1;
     function nextImage(){
-        var image = document.getElementById(imagesrc);
-        switch(useImage) {
+        var image = document.getElementById(imageSrc);
+        switch(showing) {
             case 1:
-                img.src = "PrayerPalnt.jpg";
-                useImage = 2
+            document.getElementById('imageSrc').src = "Blooming Garden.jpg";
+                showing = 2
                 break;
             case 2 :
-            img.src = "Blooming Garden.jpg";
-                useImage = 3
+            document.getElementById('imageSrc').src = "PrayerPlant.jpg";
+                showing = 3
                 break;
-            case 2 :
-            img.src = "Snakeplant.jpg";
-                useImage = 1
+            case 3 :
+            document.getElementById('imageSrc').src = "Snakeplant.jpg";
+            showing = 1
                 break;
         }
     }
+    
 </script>
 </body>
 </html> 
