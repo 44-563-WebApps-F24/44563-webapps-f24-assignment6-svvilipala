@@ -5,4 +5,4 @@ Java Script introduction
 <br>
 https://44-563-webapps-f24.github.io/44563-webapps-f24-assignment6-svvilipala/math.html
 <br>
-https://44-563-webapps-f24.github.io/44563-webapps-f24-assignment6-svvilipala/ lunch.html
+https://44-563-webapps-f24.github.io/44563-webapps-f24-assignment6-svvilipala/lunch.html
