@@ -2,5 +2,7 @@
 # WebApps-F24-Assignment-6
 Java Script introduction
 "Hosted at " https://44-563-webapps-f24.github.io/44563-webapps-f24-assignment6-svvilipala/guessit.html
+<br>
 https://44-563-webapps-f24.github.io/44563-webapps-f24-assignment6-svvilipala/math.html
+<br>
 https://44-563-webapps-f24.github.io/44563-webapps-f24-assignment6-svvilipala/ lunch.html
