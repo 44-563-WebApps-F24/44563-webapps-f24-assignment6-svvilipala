@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title> Vilipala order a Lunch</title>
+ </head>
+ <body>
+    <ul class="nav nav-tabs">
+        
+        <li class="nav-item">
+            <a class="nav-link" href="guessit.html">Colours</a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="math.html">Calculations</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="lunch.html">Lunch</a>
+          </li>
+      </ul>
+
+    <div class="container mt-5">
+        <h2>Sri Vidya Vilipala Orders a Lunch</h2>
+
+        <form>
+            <div class="mb-3">
+                <label for="drink" class="form-label">Drink</label>
+                <input type="checkbox" id="drink" value="drink">
+            </div>
+
+            <div class="mb-3">
+                <label for="side" class="form-label">Side</label>
+                <input type="checkbox" id="side" value="side">
+            </div>
+
+            <div class="mb-3">
+                <label for="in" class="form-label">Eat in</label>
+                <input type="checkbox" id="in" value="in">
+            </div>
+
+            <button type="button" class="btn btn-primary" onclick="startLunch()">Start a lunch order</button>
+        </form>
+
+        <form>
+            <div class="mb-3">
+                <label for="property" class="form-label">Enter property</label>
+                <input type="text" id="property" class="form-control" value="entree">
+            </div>
+
+            <div class="mb-3">
+                <label for="value" class="form-label">Set it to:</label>
+                <input type="text" id="value" class="form-control" value="">
+            </div>
+
+            <button type="button" class="btn btn-secondary" onclick="updateLunch()">Update the lunch</button>
+        </form>
+
+        <p id="result" class="mt-3"></p>
+    </div>
+
+    <script>
+        let my_lunch = {};
+
+        function startLunch() {
+            my_lunch = {};
+
+            my_lunch.drink = document.getElementById('drink').checked;
+            my_lunch.side = document.getElementById('side').checked;
+            my_lunch.eat_in = document.getElementById('in').checked;
+
+            document.getElementById('result').innerHTML = `
+                <strong>Lunch Order:</strong><br>
+                Drink: ${my_lunch.drink ? 'Yes' : 'No'}<br>
+                Side: ${my_lunch.side ? 'Yes' : 'No'}<br>
+                Eat in: ${my_lunch.eat_in ? 'Yes' : 'No'}
+            `;
+        }
+
+        function updateLunch() {
+            let property = document.getElementById('property').value;
+            let value = document.getElementById('value').value;
+
+            my_lunch[property] = value;
+
+            let result = "<strong>Updated Lunch Order:</strong><br>";
+            for (let key in my_lunch) {
+                result += `${key.charAt(0).toUpperCase() + key.slice(1)}: ${my_lunch[key]}<br>`;
+            }
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+
+</body>
+
+</html>
